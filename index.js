@@ -21,6 +21,7 @@ try {
 
   slack.chat.postMessage({
       channel: channel,
+      text: 'new hotfix PR alert',
       blocks: [
         {
           "type": "section",
