@@ -19,7 +19,7 @@ try {
   const payload1 = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload1}`);
 
-  await slack.chat.postMessage({
+  slack.chat.postMessage({
       channel: channel,
       blocks: [
         {
