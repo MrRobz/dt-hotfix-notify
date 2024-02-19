@@ -14,11 +14,10 @@ try {
   const { payload, actor } = github.context;
   const { owner, repo } = github.context.repo;
   const repoName = `<https://github.com/${owner}/${repo} | ${owner}/${repo}>`;
-  const linearId = 132;
-
-  const payload1 = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`actor: ${actor}`);
-  console.log(`The event payload: ${payload1}`);
+  const title = payload.pull_request.title;
+  // todo extract title
+  const linearId = payload.pull_request.title;
+  // todo check if not release PR
 
   slack.chat.postMessage({
       channel: channel,

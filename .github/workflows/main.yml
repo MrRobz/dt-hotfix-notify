@@ -9,6 +9,6 @@ jobs:
     name: A job to say hello
     steps:
       - name: Hello world action step
-        uses: MrRobz/dt-hotfix-notify@pr-4
+        uses: MrRobz/dt-hotfix-notify@main
         with:
           channel: 'Mona the Octocat'
