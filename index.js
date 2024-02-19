@@ -17,6 +17,7 @@ try {
   const linearId = 132;
 
   const payload1 = JSON.stringify(github.context.payload, undefined, 2)
+  console.log(`actor: ${actor}`);
   console.log(`The event payload: ${payload1}`);
 
   slack.chat.postMessage({
@@ -65,8 +66,6 @@ try {
         }
       ]
   });
-
-  console.log(response);
 
 } catch (error) {
   core.setFailed(error.message);
