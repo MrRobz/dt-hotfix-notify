@@ -1,6 +1,8 @@
 name: Example Workflow
 
 on:
+  pull_request:
+    types: [opened, closed, reopened]
   workflow_dispatch:
     inputs:
       who-to-greet:
@@ -19,4 +21,4 @@ jobs:
         id: print-to-log
         uses: actions/hello-world-javascript-action@main
         with:
-          who-to-greet: ${{ inputs.who-to-greet }}
+          who-to-greet: 'test'
