@@ -1,7 +1,9 @@
 name: Example Workflow
 
 on:
-  - pull_request
+  pull_request:
+    branches: main-v2
+    types: [opened]
 
 jobs:
   hello_world_job:
