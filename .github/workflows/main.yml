@@ -12,3 +12,5 @@ jobs:
         uses: MrRobz/dt-hotfix-notify@main
         with:
           channel: 123
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
