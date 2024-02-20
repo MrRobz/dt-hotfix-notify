@@ -13,11 +13,18 @@ try {
 
   const { payload, actor } = github.context;
   const { owner, repo } = github.context.repo;
+  
   const repoName = `<https://github.com/${owner}/${repo} | ${owner}/${repo}>`;
   const title = payload.pull_request.title;
-  // todo extract title
-  const linearId = payload.pull_request.title;
-  // todo check if not release PR
+  
+  if(title.startsWith('Release')) {
+    return;
+  }
+
+  
+  const linearMatches = title.match(/(ENG-\d+,?)/g);
+  const linearMatchesString = linearMatches.map(ticketId => `<https://linear.app/drivetrain/issue/${ticketId} | ${ticketId}>`).join('\n');
+  
 
   slack.chat.postMessage({
       channel: channel,
@@ -58,7 +65,7 @@ try {
           "type": "section",
           "text": {
             "type": "mrkdwn",
-            "text": `🎟️ *Linear*: \n\t   <${payload.pull_request.html_url} | ${linearId}>`
+            "text": `🎟️ *Linear*: \n\t   ${linearMatchesString}`
           }
         },
         {

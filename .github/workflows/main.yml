@@ -11,4 +11,4 @@ jobs:
       - name: Hello world action step
         uses: MrRobz/dt-hotfix-notify@main
         with:
-          channel: 'Mona the Octocat'
+          channel: 123
