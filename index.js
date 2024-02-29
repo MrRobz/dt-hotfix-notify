@@ -31,10 +31,10 @@ try {
       text: 'new hotfix PR alert',
       blocks: [
         {
-          "type": "section",
+          "type": "header",
           "text": {
-            "type": "mrkdwn",
-            "text": "🧑‍🚒 New *Hotfix Pull Request* Alert!"
+            "type": "plain_text",
+            "text": "🚒 Hotfix Pull Request Alert!"
           }
         },
         {
@@ -44,28 +44,28 @@ try {
           "type": "section",
           "text": {
             "type": "mrkdwn",
-            "text": `🔍 *Repository*: \n\t   ${repoName}`
+            "text": `🔍  *Repository*: \n\t    ${repoName}`
           }
         },
         {
           "type": "section",
           "text": {
             "type": "mrkdwn",
-            "text": `🔗 *Pull Request*: \n\t   <${payload.pull_request.html_url} | ${payload.pull_request.title}>`,
+            "text": `🔗  *Pull Request*: \n\t    <${payload.pull_request.html_url} | ${payload.pull_request.title}>`,
           }
         },
         {
           "type": "section",
           "text": {
             "type": "mrkdwn",
-            "text": `👤 *Author*: \n\t   ${actor}`
+            "text": `👤  *Author*: \n\t    ${actor}`
           }
         },
         {
           "type": "section",
           "text": {
             "type": "mrkdwn",
-            "text": `🎟️ *Linear*: \n\t   ${linearMatchesString}`
+            "text": `🎟️  *Linear*: \n\t    ${linearMatchesString}`
           }
         },
         {
