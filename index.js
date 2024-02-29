@@ -22,7 +22,7 @@ try {
   }
 
   
-  const linearMatches = title.match(/(ENG-\d+,?)/g);
+  const linearMatches = title.match(/(ENG-\d+,?)/g) || [];
   const linearMatchesString = linearMatches.map(ticketId => `<https://linear.app/drivetrain/issue/${ticketId} | ${ticketId}>`).join('\n');
   
 
